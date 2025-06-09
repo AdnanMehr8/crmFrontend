@@ -10,7 +10,7 @@ import Home from "./pages/Home";
 import Signup from "./components/SignUp";
 import Login from "./components/Login";
 import CustomerDetails from "./pages/CustomerDetailsPage";
-import Header from "./components/Header";
+
 
 const Unauthorized = () => <h1>Unauthorized Access</h1>;
 
