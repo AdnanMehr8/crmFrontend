@@ -6,7 +6,6 @@ import {
   TextField,
   Button,
   Typography,
-  CircularProgress,
 } from "@mui/material";
 
 const CustomerDetails = () => {
@@ -22,7 +21,7 @@ const CustomerDetails = () => {
 
   const token = localStorage.getItem("token");
 
-  // Fetch single customer
+ 
   const fetchCustomer = async () => {
     try {
       setLoading(true);
@@ -66,13 +65,13 @@ const CustomerDetails = () => {
         headers: { Authorization: `Bearer ${token}` },
       });
       alert("Customer deleted");
-      navigate("/customers"); // Go back to customer list
+      navigate("/customers"); 
     } catch (error) {
       setError(error.response?.data?.message || error.message);
     }
   };
 
-  if (loading) return <CircularProgress />;
+  if (loading) return <div>loading...</div>;
   if (error) return <Typography color="error">{error}</Typography>;
 
   return (
