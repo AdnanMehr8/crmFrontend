@@ -1,12 +1,11 @@
-// api.js
+
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: "http://localhost:5000", // Replace with your API base URL
-  timeout: 10000, // Optional timeout
+  baseURL: "crm-backend-three-rosy.vercel.app", 
+  timeout: 10000, 
   headers: {
     "Content-Type": "application/json",
-    // Add any other common headers
   },
 });
 
