@@ -10,6 +10,7 @@ import Home from "./pages/Home";
 import Signup from "./components/SignUp";
 import Login from "./components/Login";
 import CustomerDetails from "./pages/CustomerDetailsPage";
+import { useLocation } from "react-router-dom";
 
 
 const Unauthorized = () => <h1>Unauthorized Access</h1>;
@@ -19,8 +20,10 @@ const isAdmin = () => {
   return user && user.role === "admin";
 };
 
+
 const AdminRoute = ({ children }) => {
-  return isAdmin() ? children : <Navigate to="/unauthorized" />;
+  const location = useLocation();
+  return isAdmin() ? children : <Navigate to="/unauthorized" state={{ from: location }} replace />;
 };
 
 function App() {
