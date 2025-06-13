@@ -53,6 +53,12 @@ export default function Signup() {
           </div>
 
           <button type="submit">Submit</button>
+          <p style={{ marginTop: "1rem" }}>
+  Don't have an account? <Link to="/signup">Sign up here</Link>
+</p>
+
+
+          
         </form>
       </div>
     </div>
