@@ -21,10 +21,15 @@ const isAdmin = () => {
 };
 
 
+// const AdminRoute = ({ children }) => {
+//   const location = useLocation();
+//   return isAdmin() ? children : <Navigate to="/unauthorized" state={{ from: location }} replace />;
+// };
+
 const AdminRoute = ({ children }) => {
-  const location = useLocation();
-  return isAdmin() ? children : <Navigate to="/unauthorized" state={{ from: location }} replace />;
+  return isAdmin() ? children : <Navigate to="/login" replace />;
 };
+
 
 function App() {
   return (
