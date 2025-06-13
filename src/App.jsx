@@ -14,14 +14,12 @@ import Signup from "./components/SignUp";
 import Login from "./components/Login";
 import CustomerDetails from "./pages/CustomerDetailsPage";
 
-// 🔐 Check auth status
 const isAuthenticated = () => {
   const token = localStorage.getItem("token");
   const user = localStorage.getItem("user");
   return token && user && JSON.parse(user).role === "admin";
 };
 
-// 🔒 Protected Route
 const ProtectedRoute = ({ children }) => {
   const location = useLocation();
   return isAuthenticated() ? (
@@ -31,7 +29,6 @@ const ProtectedRoute = ({ children }) => {
   );
 };
 
-// 🧭 Header Component with Logout Button
 const Header = () => {
   const navigate = useNavigate();
 
